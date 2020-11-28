@@ -11,7 +11,7 @@ CREATE TABLE weapons(
 CREATE TABLE guests(
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
-    class VARCHAR(255),
+    type VARCHAR(255),
     race VARCHAR(255),
     weapon_id INT REFERENCES weapons(id)
 );
