@@ -24,10 +24,13 @@ def read_all():
         rooms.append(room)
     return rooms 
 
-
-
 # read one
-
+def read(id):
+    sql = "SELECT * FROM rooms WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+    room = Room(result['name'], result['capacity'], result['id'])
+    return room 
 
 
 # delete one

@@ -10,9 +10,12 @@ import repositories.weapon_repository as weapon_repository
 
 room_repository.delete_all()
 
-room = Room('Baldurs Boudoir', 4)
-room_repository.save(room)
+room1 = Room('Baldurs Boudoir', 4)
+room_repository.save(room1)
+room2 = Room('Frog Suite', 2)
+room_repository.save(room2)
 
-room_repository.read_all()
 
-pdb.set_trace()exit
+
+
+pdb.set_trace()
