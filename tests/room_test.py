@@ -17,5 +17,6 @@ class TestRoom(unittest.TestCase):
         self.guest1 = Guest('Cliff', 'Fighter', 'Dwarf', self.room1.name)
         self.room1.check_in_guest(self.guest1)
         self.assertEqual(1, len(self.room1.guests))
+        self.assertEqual('The Pit', self.guest1.room)
 
     

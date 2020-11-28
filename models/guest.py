@@ -6,3 +6,6 @@ class Guest:
         self.room= room
         self.id = id
         self.weapons = []
+
+    def equip_weapon(self, weapon):
+        self.weapons.append(weapon)
