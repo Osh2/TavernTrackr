@@ -13,3 +13,6 @@ class TestWeapon(unittest.TestCase):
         self.assertEqual(250, self.weapon1.stats['value'])
         self.assertEqual(True, self.weapon1.stats['magic'])
         self.assertEqual('short sword', self.weapon1.stats['type'])
+
+    def test_weapon_has_owner(self):
+        self.assertEqual('Elron', self.weapon1.owner)
