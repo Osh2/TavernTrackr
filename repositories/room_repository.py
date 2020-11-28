@@ -2,8 +2,6 @@ from db.run_sql import run_sql
 from models.room import Room
 
 
-# crud for room
-# create
 def save(room):
     sql = "INSERT INTO rooms (name, capacity) VALUES (%s, %s) RETURNING id"
     values = [room.name, room.capacity] 
@@ -13,7 +11,7 @@ def save(room):
     return room 
 
 
-# read all
+
 def read_all():
     rooms = []
     sql = "SELECT * FROM rooms"
@@ -24,7 +22,7 @@ def read_all():
         rooms.append(room)
     return rooms 
 
-# read one
+
 def read(id):
     sql = "SELECT * FROM rooms WHERE id = %s"
     values = [id]
@@ -33,14 +31,21 @@ def read(id):
     return room 
 
 
-# delete one
+
+def delete(id):
+    sql = "DELETE FROM rooms WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
 
 
 
-# delete all
 def delete_all():
     sql = "DELETE FROM rooms"
     run_sql(sql)
 
 
-# update 
+
+def update(room):
+    sql = "UPDATE rooms SET (name, capacity) = (%s, %s) WHERE id = %s"
+    values = [room.name, room.capacity, room.id]
+    run_sql(sql, values)
