@@ -1,6 +1,8 @@
 class Guest:
-    def __init__(self, name, type, race, id = None):
+    def __init__(self, name, type, race, room, id = None):
         self.name = name
         self.type = type 
         self.race = race
+        self.room= room
+        self.id = id
         self.weapons = []

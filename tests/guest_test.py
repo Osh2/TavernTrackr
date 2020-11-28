@@ -3,7 +3,7 @@ from models.guest import Guest
 
 class TestGuest(unittest.TestCase):
     def setUp(self):
-        self.guest1 = Guest('Elron', 'Rogue', 'Elf')
+        self.guest1 = Guest('Elron', 'Rogue', 'Elf', 'The Pit')
 
 
     def test_guest_has_name(self):
@@ -14,3 +14,6 @@ class TestGuest(unittest.TestCase):
 
     def test_guest_has_race(self):
         self.assertEqual('Elf', self.guest1.race)
+
+    def test_guest_has__room(self):
+        self.assertEqual('The Pit', self.guest1.room)
