@@ -14,6 +14,15 @@ def save(room):
 
 
 # read all
+def read_all():
+    rooms = []
+    sql = "SELECT * FROM rooms"
+    results = run_sql(sql)
+
+    for row in results:
+        room = Room(row['name'], row['capacity'], row['id'])
+        rooms.append(room)
+    return rooms 
 
 
 
@@ -26,7 +35,9 @@ def save(room):
 
 
 # delete all
-
+def delete_all():
+    sql = "DELETE FROM rooms"
+    run_sql(sql)
 
 
 # update 
