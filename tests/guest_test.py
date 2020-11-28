@@ -9,4 +9,8 @@ class TestGuest(unittest.TestCase):
     def test_guest_has_name(self):
         self.assertEqual('Elron', self.guest1.name)
 
-    
+    def test_guest_has_type(self):
+        self.assertEqual('Rogue', self.guest1.type)
+
+    def test_guest_has_race(self):
+        self.assertEqual('Elf', self.guest1.race)
