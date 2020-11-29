@@ -1,5 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
 
+{% for guest in guests %}
 
-{}
+<section>
+    <h3> {{guest.name}} </h3>
+    <h4> {{guest.room.name}} </h4>
+</section>
+
+{% endfor %}
+{% endblock %}
