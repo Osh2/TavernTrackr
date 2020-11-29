@@ -15,7 +15,8 @@ room_repository.save(room1)
 room2 = Room('Frog Suite', 2)
 room_repository.save(room2)
 
-
+guest1 = Guest('Gronk', 'Monk', 'Human', room1)
+guest_repository.save(guest1)
 
 
 pdb.set_trace()
