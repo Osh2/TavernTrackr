@@ -50,3 +50,8 @@ def delete_all():
     run_sql(sql)
 
 # update 
+def update(weapon):
+    sql = "UPDATE weapons SET (name, damage, type, magic, value, owner_id) = (%s,%s, %s, %s, %s, %s) WHERE id = %s"
+    values = [weapon.name, weapon.damage, weapon.type, weapon.magic, weapon.value, weapon.owner.id, weapon.id]
+    print (values)
+    run_sql(sql, values)
