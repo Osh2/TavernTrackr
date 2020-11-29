@@ -25,9 +25,23 @@ def read_all():
         guests.append(guest)
     return guests
 
-
-
 # read one
+def read(id):
+    guest = None
+    sql = "SELECT * FROM guests WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        room = room_repository.read(result['room_id'])
+        guest = Guest(result['name'], result['type'], result['race'], room)
+    return guest
+
+
 # delete one
 # delete all
+def delete_all():
+    sql = "DELETE FROM guests"
+    run_sql(sql)
+
 # update 
