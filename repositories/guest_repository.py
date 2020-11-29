@@ -39,6 +39,11 @@ def read(id):
 
 
 # delete one
+def delete(id):
+    sql = "DELETE FROM guests WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+
 # delete all
 def delete_all():
     sql = "DELETE FROM guests"
