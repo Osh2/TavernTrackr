@@ -49,4 +49,8 @@ def delete_all():
     sql = "DELETE FROM guests"
     run_sql(sql)
 
-# update 
+# update not quite working correctly, come back
+def update(guest):
+    sql = "UPDATE guests SET (name, type, race, room_id) = (%s, %s, %s, %s) WHERE id = %s"
+    values = [guest.name, guest.type, guest.race, guest.room.id, guest.id]
+    run_sql(sql, values)

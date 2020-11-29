@@ -20,6 +20,10 @@ CREATE TABLE guests(
 CREATE TABLE weapons(
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
-    stats VARCHAR(255),
+    damage VARCHAR(255),
+    type VARCHAR(255),
+    magic BOOLEAN,
+    value INT,
     owner_id INT REFERENCES guests(id)
 );
+

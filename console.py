@@ -24,5 +24,7 @@ guest_repository.save(guest2)
 guest3 = Guest('Sara', 'Wizard', 'Human', room2)
 guest_repository.save(guest3)
 
+weapon1 = Weapon('Stabber', {'damage':4, 'type':'dagger', 'magic':False, 'value':10}, guest2)
+weapon_repository.save(weapon1)
 
 pdb.set_trace()
