@@ -26,7 +26,24 @@ def read_all():
     return weapons
 
 # read one
+def read(id):
+    weapon = None
+    sql = "SELECT * FROM weapons WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        owner = guest_repository.read(result['owner_id'])
+        weapon = Weapon(result['name'], result['damage'], result['type'], result['magic'], result['value'], owner, result['id'])
+    return weapon
+
 # delete one
+def delete(id):
+    sql = "DELETE FROM weapons WHERE id = %s"
+    values = [id]
+    run_sql(sql,values)
+
+
 # delete all
 def delete_all():
     sql = "DELETE FROM weapons"
