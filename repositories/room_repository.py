@@ -48,4 +48,5 @@ def delete_all():
 def update(room):
     sql = "UPDATE rooms SET (name, capacity) = (%s, %s) WHERE id = %s"
     values = [room.name, room.capacity, room.id]
+    print(values)
     run_sql(sql, values)

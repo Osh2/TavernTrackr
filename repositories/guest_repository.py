@@ -4,8 +4,8 @@ from models.room import Room
 import repositories.room_repository as room_repository
 
 
-# crud for guests
-# create
+
+
 def save(guest):
     sql = "INSERT INTO guests (name, type, race, room_id) VALUES (%s, %s, %s, %s) RETURNING id"
     values = [guest.name, guest.type, guest.race, guest.room.id]
@@ -13,7 +13,7 @@ def save(guest):
     guest.id = results[0]['id']
     return guest
 
-# read all
+
 def read_all():
     guests = []
     sql = "SELECT * FROM guests"
@@ -25,7 +25,6 @@ def read_all():
         guests.append(guest)
     return guests
 
-# read one
 def read(id):
     guest = None
     sql = "SELECT * FROM guests WHERE id = %s"
@@ -38,13 +37,12 @@ def read(id):
     return guest
 
 
-# delete one
 def delete(id):
     sql = "DELETE FROM guests WHERE id = %s"
     values = [id]
     run_sql(sql, values)
 
-# delete all
+
 def delete_all():
     sql = "DELETE FROM guests"
     run_sql(sql)
@@ -53,4 +51,5 @@ def delete_all():
 def update(guest):
     sql = "UPDATE guests SET (name, type, race, room_id) = (%s, %s, %s, %s) WHERE id = %s"
     values = [guest.name, guest.type, guest.race, guest.room.id, guest.id]
+    print(values)
     run_sql(sql, values)

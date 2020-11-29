@@ -4,8 +4,7 @@ from models.guest import Guest
 import repositories.guest_repository as guest_repository
 
 
-# crud for weapon 
-# create
+
 def save(weapon):
     sql = "INSERT INTO weapons (name, damage, type, magic, value, owner_id) VALUES (%s, %s, %s, %s, %s, %s) RETURNING id"
     values = [weapon.name, weapon.damage, weapon.type, weapon.magic, weapon.value, weapon.owner.id]
@@ -13,7 +12,7 @@ def save(weapon):
     weapon.id = results[0]['id']
     return weapon 
 
-# read all
+
 def read_all():
     weapons = []
     sql = "SELECT * FROM weapons"
@@ -25,7 +24,7 @@ def read_all():
         weapons.append(weapon)
     return weapons
 
-# read one
+
 def read(id):
     weapon = None
     sql = "SELECT * FROM weapons WHERE id = %s"
@@ -37,19 +36,18 @@ def read(id):
         weapon = Weapon(result['name'], result['damage'], result['type'], result['magic'], result['value'], owner, result['id'])
     return weapon
 
-# delete one
+
 def delete(id):
     sql = "DELETE FROM weapons WHERE id = %s"
     values = [id]
     run_sql(sql,values)
 
 
-# delete all
 def delete_all():
     sql = "DELETE FROM weapons"
     run_sql(sql)
 
-# update 
+
 def update(weapon):
     sql = "UPDATE weapons SET (name, damage, type, magic, value, owner_id) = (%s,%s, %s, %s, %s, %s) WHERE id = %s"
     values = [weapon.name, weapon.damage, weapon.type, weapon.magic, weapon.value, weapon.owner.id, weapon.id]

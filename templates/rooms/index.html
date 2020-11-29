@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+This is the main page for rooms - listing all rooms 
+
+{% for room in rooms %}
+<section>
+<h3> {{room.name}} </h3>
+<p> {{room.capacity}} </p>
+
+</section>
+{% endfor %}
+
+{% endblock %}
