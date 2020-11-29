@@ -8,6 +8,7 @@ import repositories.guest_repository as guest_repository
 import repositories.room_repository as room_repository
 import repositories.weapon_repository as weapon_repository
 
+weapon_repository.delete_all()
 guest_repository.delete_all()
 room_repository.delete_all()
 
@@ -26,5 +27,9 @@ guest_repository.save(guest3)
 
 weapon1 = Weapon('Stabby', 4, 'Dagger', False, 10, guest2)
 weapon_repository.save(weapon1)
+weapon2 = Weapon('Arbiter', 12, 'Great Sword', True, 1000, guest1)
+weapon_repository.save(weapon2)
+weapon3 = Weapon('Bob', 6, 'Hand Crossbow', True, 200, guest2)
+weapon_repository.save(weapon3)
 
 pdb.set_trace()

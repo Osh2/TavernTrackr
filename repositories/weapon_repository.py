@@ -14,7 +14,22 @@ def save(weapon):
     return weapon 
 
 # read all
+def read_all():
+    weapons = []
+    sql = "SELECT * FROM weapons"
+    results = run_sql(sql)
+
+    for row in results:
+        owner = guest_repository.read(row['owner_id'])
+        weapon = Weapon(row['name'], row['damage'], row['type'], row['magic'], row['value'], owner, row['id'])
+        weapons.append(weapon)
+    return weapons
+
 # read one
 # delete one
 # delete all
+def delete_all():
+    sql = "DELETE FROM weapons"
+    run_sql(sql)
+
 # update 
