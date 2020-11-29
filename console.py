@@ -17,6 +17,9 @@ room_repository.save(room2)
 
 guest1 = Guest('Gronk', 'Monk', 'Human', room1)
 guest_repository.save(guest1)
-
+guest2 = Guest('Boblin', 'Rogue', 'Goblin', room1)
+guest_repository.save(guest2)
+guest3 = Guest('Sara', 'Wizard', 'Human', room2)
+guest_repository.save(guest3)
 
 pdb.set_trace()
