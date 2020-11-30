@@ -9,6 +9,8 @@ def guests():
     guests = guest_repository.read_all()
     return render_template("guests/index.html", guests = guests)
 
-@guests_blueprint.route("/guests")
-def add_guest():
+@guests_blueprint.route("/guests/<id>/delete", methods=["POST"])
+def delete_guest(id):
+    guest_repository.delete(id)
+    return redirect("/guests")
     

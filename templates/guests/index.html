@@ -6,6 +6,9 @@
 <main id = "guest_list">
     <h3> Name: {{guest.name}} </h3>
     <p> Room: {{guest.room.name}} </p>
+    <form action="/guests/{{guest.id}}/delete" method = POST>
+        <input type="submit" value="❌">
+    </form>
 </main>
 
 {% endfor %}
