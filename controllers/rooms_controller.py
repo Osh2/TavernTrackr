@@ -21,3 +21,13 @@ def add_room():
 def delete_room(id):
     room_repository.delete(id)
     return redirect("/rooms")
+
+@rooms_blueprint.route("/rooms/<id>/edit") 
+def update_room(id):
+    room = room_repository.read(id)
+    return render_template("rooms/edit.html", room = room)
+    
+@rooms_blueprint.route("/rooms/<id>/guests")
+def get_rooms_guests(id):
+    guests = room_repository.read_room_guests(id)
+    return render_template("rooms/guests.html", guests = guests )

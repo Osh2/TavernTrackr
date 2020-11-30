@@ -21,7 +21,8 @@ This is the main page for rooms - listing all rooms
     <form action="/rooms/{{room.id}}/delete" method="POST">
         <input type="submit" value = "❌">
     </form>
-
+    <a href="/rooms/{{room.id}}/edit">Edit</a>
+    <a href="/rooms/{{room.id}}/guests">Guests</a>
 </main>
 {% endfor %}
 

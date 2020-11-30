@@ -35,6 +35,7 @@ def read(id):
         room = room_repository.read(result['room_id'])
         guest = Guest(result['name'], result['type'], result['race'], room, result['id'])
     return guest
+    
 
 
 def delete(id):
@@ -47,7 +48,7 @@ def delete_all():
     sql = "DELETE FROM guests"
     run_sql(sql)
 
-# update not quite working correctly, come back
+
 def update(guest):
     sql = "UPDATE guests SET (name, type, race, room_id) = (%s, %s, %s, %s) WHERE id = %s"
     values = [guest.name, guest.type, guest.race, guest.room.id, guest.id]
