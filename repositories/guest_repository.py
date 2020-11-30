@@ -33,7 +33,7 @@ def read(id):
 
     if result is not None:
         room = room_repository.read(result['room_id'])
-        guest = Guest(result['name'], result['type'], result['race'], room)
+        guest = Guest(result['name'], result['type'], result['race'], room, result['id'])
     return guest
 
 

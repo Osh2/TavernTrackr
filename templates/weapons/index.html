@@ -1,6 +1,32 @@
 {% extends 'base.html' %}
 {% block content %}
- 
+
+<section>
+        <h3> Add Weapon </h3>
+        <form action="/weapons" method="POST">
+                <input type="text" name="name" id="name" placeholder="Weapon Name">
+                <input type="number" name="damage" id="damage" placeholder="Damage">
+                <input type="text" name="type" id="type" placeholder="Type">
+                <select name="magic" id="magic">
+                        <option value="">--Please Select</option>
+                        <option value="TRUE">True</option>
+                        <option value="FALSE">False</option>
+                </select>
+                <label for="magic"> Magic? </label>
+                <input type="number" name="value" id="value" placeholder="Value">
+                <label for="owner_id">Owner</label>
+                <select name="owner_id" id="owner_id">
+                        <option value="">--Please Select--</option>
+                        {% for guest in guests %}
+                        <option value="{{guest.id}}">{{guest.name}}</option>
+                        {% endfor %}
+                
+                <input type="submit" value="Add Weapon">
+
+                </select>
+        
+        </form>
+</section>
 
 
 {% for weapon in weapons %}
@@ -8,6 +34,7 @@
         <h3> Name: {{ weapon.name }} </h3> 
         <p> Damage: {{weapon.damage}} </p>
         <p>Type: {{weapon.type}} </p>
+        <p> Owner: {{weapon.owner.name}}</p>
         <form action="/weapons/{{weapon.id}}/delete" method = "POST">
                 <input type="submit" value = "❌">
         </form>
