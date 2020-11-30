@@ -1,6 +1,22 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<section>
+    <h2>Add Guest</h2>
+    <form action="/guests" method = "POST">
+        <input type="text" name="name" id="name" placeholder="Name">
+        <input type="text" name="type" id="type" placeholder="Class">
+        <input type="text" name="race" id="race" placeholder="Race">
+        <select name="room_id" id="room_id">
+            <option value=""> --Please Select-- </option>
+            {% for room in rooms %}
+            <option value="{{room.id}}"> {{room.name}}</option>
+            {% endfor %}
+        </select>
+        <input type="submit">
+    </form>
+</section>
+
 {% for guest in guests %}
 
 <main id = "guest_list">
