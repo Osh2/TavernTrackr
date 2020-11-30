@@ -3,10 +3,10 @@
 
 {% for guest in guests %}
 
-<section>
-    <h3> {{guest.name}} </h3>
-    <h4> {{guest.room.name}} </h4>
-</section>
+<main id = "guest_list">
+    <h3> Name: {{guest.name}} </h3>
+    <p> Room: {{guest.room.name}} </p>
+</main>
 
 {% endfor %}
 {% endblock %}

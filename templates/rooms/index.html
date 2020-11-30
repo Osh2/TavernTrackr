@@ -1,13 +1,25 @@
 {% extends 'base.html' %}
 {% block content %}
 This is the main page for rooms - listing all rooms 
+ 
+
+<h2> Add Room </h2>
+<form action="/rooms" method = "POST">
+    <div>
+        <input type="text" id = "name" name = "name" placeholder="Room Name">
+        <input type="number" id = "capacity" name = "capacity" placeholder = "Room Capacity">
+        <input type="submit">
+
+    </div>
+
+</form>
 
 {% for room in rooms %}
-<section>
-<h3> {{room.name}} </h3>
-<p> {{room.capacity}} </p>
+<main id = 'room_list'>
+<h3> Name: {{room.name}} </h3>
+<p> Capacity: {{room.capacity}} </p>
 
-</section>
+</main>
 {% endfor %}
 
 {% endblock %}
