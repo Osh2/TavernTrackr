@@ -16,8 +16,12 @@ This is the main page for rooms - listing all rooms
 
 {% for room in rooms %}
 <main id = 'room_list'>
-<h3> Name: {{room.name}} </h3>
-<p> Capacity: {{room.capacity}} </p>
+    <h3> Name: {{room.name}} </h3>
+    <p> Capacity: {{room.capacity}} </p>   
+    <p> Guests: {{room.guests}} </p>
+    <form action="/rooms/{{room.id}}/delete" method="POST">
+        <input type="submit" value = "❌">
+    </form>
 
 </main>
 {% endfor %}
