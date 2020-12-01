@@ -63,3 +63,17 @@ body > section > a{
     text-decoration: none;
 }
 
+
+
+#add_room{
+    background-color: #4F3824;
+    padding: 20px;
+    color: #DDB967;
+}
+
+.room_list{
+    background-color:  #D1603D;
+    padding: 20px;
+    color: #DDB967;
+}
+
