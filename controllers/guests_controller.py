@@ -50,10 +50,3 @@ def update_guest(id):
     return redirect("/guests")
 
 
-#     @rooms_blueprint.route("/rooms/<id>", methods = ["POST"])
-# def update_room(id):
-#     name = request.form["name"]
-#     capacity = request.form["capacity"]
-#     room = Room(name, capacity, id)
-#     room_repository.update(room)
-#     return redirect("/rooms")

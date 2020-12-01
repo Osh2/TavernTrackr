@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h3>Edit Weapon Details</h3>
+<main>
+    <form action="/weapons/{{weapon.id}}" method="POST">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" value="{{weapon.name}}" autofocus>
+        <label for="damage">Damage</label>
+        <input type="number" name="damage" id="damage" value="{{weapon.damage}}">
+        <label for="type">Type </label>
+        <input type="text" name="type" id="type" value="{{weapon.type}}">
+        <select name="magic" id="magic" value="{{weapon.magic}}">
+            <option value="">--Please Select--</option>
+            <option value="TRUE">True</option>
+            <option value="FALSE">False</option>
+        </select>
+        <label for="value">Value</label>
+        <input type="number" name="value" id="value" value="{{weapon.value}}">
+        <label for="owner_id">Owner</label>
+        <select name="owner_id" id="owner_id" >
+            <option value="">--Please Select--</option>
+            {% for owner in owners %}
+            <option value="{{owner.id}}">{{owner.name}}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Update">
+    </form>
+</main>
+
+{% endblock %}
