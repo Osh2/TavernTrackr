@@ -1,11 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
-
-
-<header>
+<section class="add_form">
         <h3> Add Weapon </h3>
-</header>
-<section>
         <form action="/weapons" method="POST">
                 <label for="name">Name:</label>
                 <input type="text" name="name" id="name" placeholder="Weapon Name">
@@ -34,7 +30,7 @@
 
 
 {% for weapon in weapons %}
-<main id = "weapon_list">       
+<main class="list">       
         <h3> Weapon Name: {{ weapon.name }} </h3> 
         <p> Owner: {{weapon.owner.name}}</p>
         <form action="/weapons/{{weapon.id}}/delete" method = "POST">

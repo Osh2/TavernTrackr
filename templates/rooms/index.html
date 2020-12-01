@@ -2,7 +2,7 @@
 {% block content %}
     
  
-<section id="add_room" >
+<section class="add_form" >
     <h2> Add Room </h2>
     <form action="/rooms" method = "POST">
         <div>
@@ -15,8 +15,9 @@
     </form>
 </section>
 
-<main class = 'room_list'>
-    {% for room in rooms %}
+
+{% for room in rooms %}
+ <main class = 'list'>
         <h3> Name: {{room.name}} </h3>
         <p> Capacity: {{room.capacity}} </p>  
         <p>Available Space: {{room.capacity - room.num_guests}}</p> 

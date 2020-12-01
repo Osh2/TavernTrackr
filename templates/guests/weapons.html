@@ -1,10 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
-<header>
+{% for weapon in weapons if weapon %}
+<main class="list">
     <h2>Weapon Overview</h2>
-</header>
-<main>
-    {% for weapon in weapons if weapon %}
         <h3>Name: {{weapon.name}}</h3>
         <p>Type: {{weapon.type}}</p>
         <p>Value: {{weapon.value}}gp</p>
