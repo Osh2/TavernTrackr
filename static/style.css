@@ -78,5 +78,7 @@ body > section > a{
     display: grid;
 }
 
-
+#empty{
+    background-color: #D1603D ;
+}
 

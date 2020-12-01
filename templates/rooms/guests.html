@@ -1,16 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
-{% for guest in guests if guest %}
+
 <header class="add_form">
     <h2>Guest Overview</h2>
 </header>
+{% for guest in guests if guest %}
 <main class="list">
     
     <h3>Name: {{guest.name}}</h3>
     <p>Race: {{guest.race}}</p>
     <a href="/guests/{{guest.id}}/weapons">Guest's Stored Weapons</a>
     {% else %}
-    <h3> Currently Empty </h3>
+    <h3 > Currently Empty </h3>
+
 </main>
 
 
