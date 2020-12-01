@@ -18,7 +18,8 @@
 <main id = 'room_list'></main>
     {% for room in rooms %}
         <h3> Name: {{room.name}} </h3>
-        <p> Capacity: {{room.capacity}} </p>   
+        <p> Capacity: {{room.capacity}} </p>  
+        <p>Guest Number / {{room.num_guests}}</p> 
         <form action="/rooms/{{room.id}}/delete" method="POST">
             <input type="submit" value = "❌">
         </form>

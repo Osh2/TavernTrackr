@@ -14,11 +14,12 @@ def save(room):
 
 def read_all():
     rooms = []
-    sql = "SELECT * FROM rooms"
+    sql = "SELECT rooms.*, COUNT(guests.id) AS guest_count FROM rooms LEFT JOIN guests ON rooms.id = guests.room_id GROUP BY rooms.id"
     results = run_sql(sql)
 
     for row in results:
         room = Room(row['name'], row['capacity'], row['id'])
+        room.set_num_guests(row['guest_count'])
         rooms.append(room)
     return rooms 
 
@@ -46,8 +47,6 @@ def delete(id):
     sql = "DELETE FROM rooms WHERE id = %s"
     values = [id]
     run_sql(sql, values)
-
-
 
 def delete_all():
     sql = "DELETE FROM rooms"

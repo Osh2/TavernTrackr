@@ -14,7 +14,9 @@
         <select name="room_id" id="room_id">
             <option value=""> --Please Select-- </option>
             {% for room in rooms %}
+            {% if room.num_guests < room.capacity %}
             <option value="{{room.id}}"> {{room.name}}</option>
+            {% endif %}
             {% endfor %}
         </select>
         <input type="submit" value="Check In Guest">
