@@ -14,7 +14,7 @@ CREATE TABLE guests(
     name VARCHAR(255),
     type VARCHAR(255),
     race VARCHAR(255),
-    room_id INT REFERENCES rooms(id)
+    room_id INT REFERENCES rooms(id) 
 );
 
 CREATE TABLE weapons(
@@ -24,6 +24,6 @@ CREATE TABLE weapons(
     type VARCHAR(255),
     magic BOOLEAN,
     value INT,
-    owner_id INT REFERENCES guests(id)
+    owner_id INT REFERENCES guests(id) ON DELETE CASCADE 
 );
 

@@ -13,14 +13,14 @@
             <option value="{{room.id}}"> {{room.name}}</option>
             {% endfor %}
         </select>
-        <input type="submit" value="Add Guest">
+        <input type="submit" value="Check In Guest">
     </form>
 </section>
 
 {% for guest in guests %}
 
 <main id = "guest_list">
-    <h3> Name: {{guest.name}} </h3>
+    <h4> Name: {{guest.name}} </h4>
     <p> Room: {{guest.room.name}} </p>
     <form action="/guests/{{guest.id}}/delete" method = POST>
         <input type="submit" value="❌">

@@ -23,10 +23,19 @@ def delete_room(id):
     return redirect("/rooms")
 
 @rooms_blueprint.route("/rooms/<id>/edit") 
-def update_room(id):
+def edit_room_page(id):
     room = room_repository.read(id)
     return render_template("rooms/edit.html", room = room)
-    
+
+@rooms_blueprint.route("/rooms/<id>", methods = ["POST"])
+def update_room(id):
+    name = request.form["name"]
+    capacity = request.form["capacity"]
+    room = Room(name, capacity, id)
+    room_repository.update(room)
+    return redirect("/rooms")
+
+
 @rooms_blueprint.route("/rooms/<id>/guests")
 def get_rooms_guests(id):
     guests = room_repository.read_room_guests(id)
