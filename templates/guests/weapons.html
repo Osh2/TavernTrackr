@@ -1,17 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
-
+<header>
+    <h2>Weapon Overview</h2>
+</header>
 <main>
-   
     {% for weapon in weapons if weapon %}
-        <h4>{{weapon.name}}</h4>
-        <p>{{weapon.type}}</p>
-        <p>{{weapon.value}}</p>
+        <h3>Name: {{weapon.name}}</h3>
+        <p>Type: {{weapon.type}}</p>
+        <p>Value: {{weapon.value}}gp</p>
     {% else %}
         <h3> No Stored Weapons </h3>
     {% endfor %}
-
-    
 </main>
 
 

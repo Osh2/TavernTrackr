@@ -14,7 +14,7 @@ CREATE TABLE guests(
     name VARCHAR(255),
     type VARCHAR(255),
     race VARCHAR(255),
-    room_id INT REFERENCES rooms(id) 
+    room_id INT REFERENCES rooms(id) ON DELETE CASCADE
 );
 
 CREATE TABLE weapons(

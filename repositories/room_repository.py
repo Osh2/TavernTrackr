@@ -12,8 +12,6 @@ def save(room):
     room.id=results[0]['id']
     return room 
 
-
-
 def read_all():
     rooms = []
     sql = "SELECT * FROM rooms"

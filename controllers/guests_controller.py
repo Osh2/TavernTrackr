@@ -50,3 +50,7 @@ def update_guest(id):
     return redirect("/guests")
 
 
+@guests_blueprint.route("/guests/<id>/details")
+def guest_details(id):
+    guest = guest_repository.read(id)
+    return render_template("guests/details.html", guest = guest)

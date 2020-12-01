@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<header>
+    <h3>Guest Details</h3>
+</header>
+<main>
+    <p>Name: {{guest.name}}</p>
+    <p>Class: {{guest.type}}</p>
+    <p>Race: {{guest.race}}</p>
+    <p> Room: {{guest.room.name}}</p>
+    <a href="/guests/{{guest.id}}/weapons">Stored Weapons</a>
+</main>
+
+
+{% endblock %}

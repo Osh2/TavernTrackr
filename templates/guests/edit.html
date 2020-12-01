@@ -1,16 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
-<h3> Update Guest </h3>
+<header>
+    <h2> Edit Guest </h2>
+</header>
 <main>
     <form action="/guests/{{guest.id}}" method="POST">
-        <label for="name">Name</label>
+        <label for="name">Name:</label>
         <input type="text" name="name" id="name" value="{{guest.name}}" autofocus>
-        <label for="type">Class</label>
+        <label for="type">Class:</label>
         <input type="text" name="type" id="type" value="{{guest.type}}">
-        <label for="race">Race</label>
+        <label for="race">Race:</label>
         <input type="text" name="race" id="race" value="{{guest.race}}">
-        <label for="room">Room</label>
-        <select name="room_id" id="room_id" value="{{room.name}}">
+        <label for="room_id">Room:</label>
+        <select name="room_id" id="room_id" >
             {% for room in rooms %}
             <option value="{{room.id}}"> {{room.name}} </option>
             {% endfor %}
