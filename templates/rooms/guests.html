@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
 <main>
-{% for guest in guests %}
+{% for guest in guests if guest %}
 <h3>Name: {{guest.name}}</h3>
 <p>Race: {{guest.race}}</p>
 <a href="/guests/{{guest.id}}/weapons">Guest's Stored Weapons</a>
+{% else %}
+<h2> Currently Empty </h2>
 </main>
 
 
