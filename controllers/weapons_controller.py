@@ -28,3 +28,8 @@ def add_weapon():
     weapon = Weapon(name, damage, type, magic, value, weapon_owner)
     weapon_repository.save(weapon)
     return redirect("/weapons")
+
+@weapons_blueprint.route("/weapons/<id>/show")
+def show_weapon(id):
+    weapon = weapon_repository.read(id)
+    return render_template("weapons/show.html", weapon = weapon)
