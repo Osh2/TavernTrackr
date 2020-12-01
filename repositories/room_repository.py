@@ -31,7 +31,7 @@ def read(id):
     result = run_sql(sql, values)[0]
     room = Room(result['name'], result['capacity'], result['id'])
     return room 
-# --------------------------------------?
+
 def read_room_guests(room_id):
     guests = []
     sql = "SELECT * FROM guests WHERE room_id = %s"
@@ -43,7 +43,6 @@ def read_room_guests(room_id):
         guests.append(guest)
     return guests
     
-# ----------------------------------------------------
 
 def delete(id):
     sql = "DELETE FROM rooms WHERE id = %s"

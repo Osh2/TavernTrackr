@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<main>
+    {% for weapon in weapons %}
+    <h4>{{weapon.name}}</h4>
+    <p>{{weapon.type}}</p>
+    <p>{{weapon.value}}</p>
+    {% endfor %}
+</main>
+
+
+
+{% endblock %}

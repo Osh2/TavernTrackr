@@ -26,3 +26,8 @@ def add_guest():
     guest = Guest(guest_name, guest_type, guest_race, guest_room)
     guest_repository.save(guest)
     return redirect("/guests")
+
+@guests_blueprint.route("/guests/<id>/weapons")
+def get_guests_weapons(id):
+    weapons = guest_repository.read_guests_weapons(id)
+    return render_template("guests/weapons.html", weapons=weapons)

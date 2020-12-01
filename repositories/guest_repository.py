@@ -1,6 +1,7 @@
 from db.run_sql import run_sql
 from models.guest import Guest
 from models.room import Room
+from models.weapon import Weapon
 import repositories.room_repository as room_repository
 
 
@@ -35,7 +36,17 @@ def read(id):
         room = room_repository.read(result['room_id'])
         guest = Guest(result['name'], result['type'], result['race'], room, result['id'])
     return guest
-    
+ 
+def read_guests_weapons(id):
+    weapons = []
+    sql = "SELECT * FROM weapons WHERE owner_id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        weapon = Weapon(row['name'], row['damage'], row['type'], row['magic'], row['value'], row['owner_id'], row['id'])
+        weapons.append(weapon)
+    return weapons
 
 
 def delete(id):
