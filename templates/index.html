@@ -1,15 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
-
-<h1> Navigate to Rooms, Guests or Weapon Storage </h1>
-
-<a href="/rooms" id="hprooms">
-    <img src="https://www.pinclipart.com/picdir/big/113-1130894_dorms-hotel-room-icon-clipart.png" alt="Rooms"> <h3> Rooms </h3>
-</a>
-<a href="/guests" id="hpguests">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPVhCKxuUIspulbp9gs99Y8mheMb0Skhrf7Q&usqp=CAU" alt="Guests"> <h3>Guests</h3>
-</a>
-<a href="/weapons" id="hpweapons"> 
-    <img src="https://www.flaticon.com/svg/static/icons/svg/46/46039.svg" alt="Weapon Storage" > <h3>Weapon Storage</h3>
-</a>
+<section id="hpimages">
+    <a href="/rooms" >
+        <img src="https://static.thenounproject.com/png/17576-200.png" alt="Rooms" id="hprooms"> <h3> Rooms </h3>
+    </a>
+    <a href="/guests" >
+        <img src="https://www.flaticon.com/svg/static/icons/svg/1706/1706500.svg" alt="Guests" id="hpguests"> <h3>Guests</h3>
+    </a>
+    <a href="/weapons" > 
+        <img src="https://www.flaticon.com/svg/static/icons/svg/46/46039.svg" alt="Weapon Storage" id="hpweapons" > <h3>Weapon Storage</h3>
+    </a>
+</section>
 {% endblock %}

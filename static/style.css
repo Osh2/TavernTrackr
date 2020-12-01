@@ -1,0 +1,65 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+a:visited{ color: #DDB967;}
+a {color:  #DDB967;}
+a:hover {color: #D0E37F;}  
+a:active {color:#FA8072;}
+
+#title{
+    font-size: 400%;
+}
+
+body > header{
+    background-color: #221D23;
+    color: #DDB967;
+    padding: 10px;
+    text-align: center;
+
+}
+
+body > header > nav > ul > li > a{
+    text-decoration: none;
+    font-size: 120%;
+    border: solid 2px #4F3824;
+    padding: 3px 50px;
+    
+}
+
+body > header > nav > ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+#hprooms{
+    width: 300px;
+    height: auto;
+}
+
+#hpguests{
+    width: 300px;
+    height: auto;
+}
+
+#hpweapons{
+    width: 300px;
+    height: auto;
+    
+}
+#hpimages{
+    background-color: #D1603D;
+    display: flex;
+    justify-content: space-around;
+    padding: 200px;
+    text-align: center;
+    
+}
+
+body > section > a{
+    text-decoration: none;
+}
+
