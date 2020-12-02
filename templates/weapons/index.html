@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+
 <section class="add_form">
         <h3> Add Weapon </h3>
         <form action="/weapons" method="POST">
@@ -27,7 +28,7 @@
                 </select>
         </form>
 </section>
-<header>
+<header id="weapon_nav">
         <h1>All Weapons</h1>
         <a href="/weapons/magic" id="specific_weapons"> Magic Weapons </a>
         <a href="/weapons/not_magic" id="specific_weapons">Non-Magic Weapons </a>

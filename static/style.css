@@ -78,13 +78,15 @@ body > section > a{
     color: #DDB967;
     display: flex;
     flex-direction: column;
-    /* align-items: center;
-    margin: 0; */
+    margin: 0; 
+    
 }
 
-/* .child{
-    align-content: center;
-} */
+.child{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
 
 #empty{
     background-color: #D1603D ;
@@ -99,3 +101,12 @@ body > section > a{
     
 }
 
+#hr{
+    color: black;
+}
+
+#weapon_nav{
+    background-color: #D1603D ;
+    justify-content: space-between;
+
+}

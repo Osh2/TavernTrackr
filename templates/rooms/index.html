@@ -19,7 +19,7 @@
     {% for room in rooms %}
     <div class = 'list'>
         <div class = "child">
-        <h3> Name: {{room.name}} </h3>
+        <h2> Name: {{room.name}} </h2>
         <p> Capacity: {{room.capacity}} </p>  
         <p>Available Space: {{room.capacity - room.num_guests}}</p> 
         <form action="/rooms/{{room.id}}/delete" method="POST">
@@ -27,7 +27,7 @@
         </form>
         <a href="/rooms/{{room.id}}/edit">Edit</a>
         <a href="/rooms/{{room.id}}/guests">Guests</a>
-        </div>
+        </div> 
     </div>
     {% endfor %}
 </main>

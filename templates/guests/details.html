@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
-<main class = "list">
+<header class="add_form">
     <h2>Guest Details</h2>
-    <p>Name: {{guest.name}}</p>
+</header>
+<main class = "list">
+    <h2>Name: {{guest.name}}</h2>
     <p>Class: {{guest.type}}</p>
     <p>Race: {{guest.race}}</p>
     <p> Room: {{guest.room.name}}</p>
