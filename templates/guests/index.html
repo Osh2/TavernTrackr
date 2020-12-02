@@ -22,8 +22,9 @@
         <input type="submit" value="Check In Guest">
     </form>
 </section>
-{% for guest in guests %}
-<main class="list">
+<main>
+    {% for guest in guests %}
+    <div class="list">
     <h3> Name: {{guest.name}} </h3>
     <p> Room: {{guest.room.name}} </p>
     <form action="/guests/{{guest.id}}/delete" method = POST>
@@ -31,6 +32,7 @@
     </form>
     <a href="/guests/{{guest.id}}/edit"> Edit </a>
     <a href="/guests/{{guest.id}}/details"> Details </a>
+</div>
 </main>
 
 {% endfor %}

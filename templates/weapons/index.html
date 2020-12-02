@@ -33,16 +33,18 @@
         <a href="/weapons/not_magic" id="specific_weapons">Non-Magic Weapons </a>
 </header>
 
-{% for weapon in weapons %}
-<main class="list">       
-        <h3> Weapon Name: {{ weapon.name }} </h3> 
-        <p> Owner: {{weapon.owner.name}}</p>
-        <form action="/weapons/{{weapon.id}}/delete" method = "POST">
-                <input type="submit" value = "❌">
-        </form>
-        <a href="/weapons/{{weapon.id}}/details"> Details </a>
-        <a href="/weapons/{{weapon.id}}/edit"> Edit </a>
-        
+
+<main> 
+        <div class="list">
+                {% for weapon in weapons %}      
+                <h3> Weapon Name: {{ weapon.name }} </h3> 
+                <p> Owner: {{weapon.owner.name}}</p>
+                <form action="/weapons/{{weapon.id}}/delete" method = "POST">
+                        <input type="submit" value = "❌">
+                </form>
+                <a href="/weapons/{{weapon.id}}/details"> Details </a>
+                <a href="/weapons/{{weapon.id}}/edit"> Edit </a>
+        </div>
 </main>
 
 {% endfor %}

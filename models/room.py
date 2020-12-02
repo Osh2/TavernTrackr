@@ -4,7 +4,8 @@ class Room:
         self.capacity = capacity 
         self.guests = []
         self.id = id 
-
+        self.num_guests = 0
+        
     def check_in_guest(self, guest):
         self.guests.append(guest)
 

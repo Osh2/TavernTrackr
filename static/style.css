@@ -76,7 +76,8 @@ body > section > a{
     background-color:  #D1603D;
     padding: 20px;
     color: #DDB967;
-    display: grid;
+    display: flex;
+    justify-content: space-between;
 }
 
 #empty{

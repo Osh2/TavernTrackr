@@ -15,9 +15,9 @@
     </form>
 </section>
 
-
+<main >
 {% for room in rooms %}
- <main class = 'list'>
+    <div class = 'list'>
         <h3> Name: {{room.name}} </h3>
         <p> Capacity: {{room.capacity}} </p>  
         <p>Available Space: {{room.capacity - room.num_guests}}</p> 
@@ -26,6 +26,7 @@
         </form>
         <a href="/rooms/{{room.id}}/edit">Edit</a>
         <a href="/rooms/{{room.id}}/guests">Guests</a>
+    </div>
 </main>
 {% endfor %}
 {% endblock %}

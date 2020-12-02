@@ -65,3 +65,15 @@ def read_weapons_by_magic(magic_status):
         weapon = Weapon(row['name'], row['damage'], row['type'], row['magic'], row['value'], owner, row['id'])
         weapons.append(weapon)
     return weapons
+
+
+def read_guests_weapons(id):
+    weapons = []
+    sql = "SELECT * FROM weapons WHERE owner_id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        weapon = Weapon(row['name'], row['damage'], row['type'], row['magic'], row['value'], row['owner_id'], row['id'])
+        weapons.append(weapon)
+    return weapons

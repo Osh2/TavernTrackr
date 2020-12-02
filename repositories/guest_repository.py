@@ -37,18 +37,6 @@ def read(id):
         guest = Guest(result['name'], result['type'], result['race'], room, result['id'])
     return guest
  
-def read_guests_weapons(id):
-    weapons = []
-    sql = "SELECT * FROM weapons WHERE owner_id = %s"
-    values = [id]
-    results = run_sql(sql, values)
-
-    for row in results:
-        weapon = Weapon(row['name'], row['damage'], row['type'], row['magic'], row['value'], row['owner_id'], row['id'])
-        weapons.append(weapon)
-    return weapons
-
-
 def delete(id):
     sql = "DELETE FROM guests WHERE id = %s"
     values = [id]
@@ -65,3 +53,15 @@ def update(guest):
     values = [guest.name, guest.type, guest.race, guest.room.id, guest.id]
     print(values)
     run_sql(sql, values)
+
+def read_room_guests(room_id):
+    guests = []
+    sql = "SELECT * FROM guests WHERE room_id = %s"
+    values = [room_id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        guest = Guest(row['name'], row['type'], row['race'], row['room_id'], row['id'])
+        guests.append(guest)
+    return guests
+    
