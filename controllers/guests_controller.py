@@ -2,6 +2,7 @@ from flask import Flask, Blueprint, render_template, request, redirect
 from models.guest import Guest
 import repositories.guest_repository as guest_repository
 import repositories.room_repository as room_repository
+import repositories.weapon_repository as weapon_repository
 
 guests_blueprint = Blueprint("guests", __name__)
 
@@ -29,7 +30,7 @@ def add_guest():
 
 @guests_blueprint.route("/guests/<id>/weapons")
 def get_guests_weapons(id):
-    weapons = guest_repository.read_guests_weapons(id)
+    weapons = weapon_repository.read_guests_weapons(id)
     return render_template("guests/weapons.html", weapons=weapons)
 
 @guests_blueprint.route("/guests/<id>/edit")

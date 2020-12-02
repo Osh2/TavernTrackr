@@ -1,6 +1,7 @@
 from flask import Flask, Blueprint, render_template, request, redirect
 from models.room import Room
 import repositories.room_repository as room_repository
+import repositories.guest_repository as guest_repository
 
 rooms_blueprint = Blueprint("rooms", __name__)
 
@@ -38,5 +39,5 @@ def update_room(id):
 
 @rooms_blueprint.route("/rooms/<id>/guests")
 def get_rooms_guests(id):
-    guests = room_repository.read_room_guests(id)
+    guests = guest_repository.read_room_guests(id)
     return render_template("rooms/guests.html", guests = guests )

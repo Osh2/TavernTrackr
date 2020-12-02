@@ -35,8 +35,9 @@
 
 
 <main> 
+        {% for weapon in weapons %}    
         <div class="list">
-                {% for weapon in weapons %}      
+                  
                 <h3> Weapon Name: {{ weapon.name }} </h3> 
                 <p> Owner: {{weapon.owner.name}}</p>
                 <form action="/weapons/{{weapon.id}}/delete" method = "POST">
@@ -45,7 +46,8 @@
                 <a href="/weapons/{{weapon.id}}/details"> Details </a>
                 <a href="/weapons/{{weapon.id}}/edit"> Edit </a>
         </div>
+        {% endfor %}
 </main>
 
-{% endfor %}
+
 {% endblock %}
