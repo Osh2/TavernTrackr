@@ -5,8 +5,6 @@ from models.weapon import Weapon
 import repositories.room_repository as room_repository
 
 
-
-
 def save(guest):
     sql = "INSERT INTO guests (name, type, race, room_id) VALUES (%s, %s, %s, %s) RETURNING id"
     values = [guest.name, guest.type, guest.race, guest.room.id]
