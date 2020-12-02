@@ -82,3 +82,12 @@ body > section > a{
     background-color: #D1603D ;
 }
 
+#magic_weapons{
+    background-color: #221D23;
+    text-decoration: none;
+    font-size: 120%;
+    border: solid 2px #4F3824;
+    padding: 3px 100px;
+    
+}
+

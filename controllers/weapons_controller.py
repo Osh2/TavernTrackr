@@ -52,3 +52,10 @@ def update_weapon(id):
     weapon = Weapon(name, damage, type, magic, value, owner, id)
     weapon_repository.update(weapon)
     return redirect("/weapons")
+
+@weapons_blueprint.route("/weapons/magic")
+def show_magic_weapons():
+    weapons = weapon_repository.read_weapons_by_magic(True)
+    return render_template("weapons/magic_weapons.html", weapons = weapons)
+
+@weapons_blueprint.route("")

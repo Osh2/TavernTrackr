@@ -53,3 +53,15 @@ def update(weapon):
     values = [weapon.name, weapon.damage, weapon.type, weapon.magic, weapon.value, weapon.owner.id, weapon.id]
     print (values)
     run_sql(sql, values)
+
+def read_weapons_by_magic(magic_status):
+    weapons = []
+    sql = "SELECT * FROM weapons WHERE magic = %s"
+    values = [magic_status]
+    results = run_sql(sql, values)
+
+    for row in results:
+        owner = guest_repository.read(row['owner_id'])
+        weapon = Weapon(row['name'], row['damage'], row['type'], row['magic'], row['value'], owner, row['id'])
+        weapons.append(weapon)
+    return weapons
