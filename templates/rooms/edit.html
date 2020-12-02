@@ -1,7 +1,7 @@
 {%extends 'base.html'%}
 {% block content %}
 
-<main class="add_form">
+<main class="edit_form">
     <h2>Edit Room</h2>
     <form action="/rooms/{{room.id}}" method="POST">
         <label for="name"> Name: </label>
@@ -11,4 +11,10 @@
         <input type="submit" value="Update">
     </form>
 </main>
+<section class = "list">
+    <h2>Guest Details</h2>
+    <h2>Name: {{room.name}}</h2>
+    <p>Capactiy: {{room.capacity}}</p>
+    <p>Guests: {{room.num_guests}}</p>
+</section>
 {% endblock %}

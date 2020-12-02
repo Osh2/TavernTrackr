@@ -120,3 +120,15 @@ body > section > a{
 .mini_menu{
     display: flex;
 }
+
+.edit_form{
+    background-color: #4F3824;
+    padding: 20px;
+    color: #DDB967;
+}
+
+.edit_fill{
+    background-color: #D1603D;
+    padding: 310px;
+
+}
