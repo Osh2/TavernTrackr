@@ -76,17 +76,17 @@ body > section > a{
     background-color:  #D1603D;
     padding: 20px;
     color: #DDB967;
+    margin: 0;
+
+}
+ 
+.list_items{
     display: flex;
     flex-direction: column;
-    margin: 0; 
-    
 }
 
-.child{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-}
+
+
 
 #empty{
     background-color: #D1603D ;
@@ -108,5 +108,15 @@ body > section > a{
 #weapon_nav{
     background-color: #D1603D ;
     justify-content: space-between;
+}
 
+.buttons{
+    text-decoration: none;
+    border: solid 2px #4F3824;
+    background-color: #221D23;
+    padding: 3px;
+}
+
+.mini_menu{
+    display: flex;
 }

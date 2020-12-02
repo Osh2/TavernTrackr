@@ -2,7 +2,7 @@
 {% block content %}
 
 <section class="add_form">
-        <h3> Add Weapon </h3>
+        <h2> Add Weapon </h2>
         <form action="/weapons" method="POST">
                 <label for="name">Name:</label>
                 <input type="text" name="name" id="name" placeholder="Weapon Name">
@@ -29,7 +29,7 @@
         </form>
 </section>
 <header id="weapon_nav">
-        <h1>All Weapons</h1>
+        <h1 id = "weapons_title">All Weapons - Overview</h1>
         <a href="/weapons/magic" id="specific_weapons"> Magic Weapons </a>
         <a href="/weapons/not_magic" id="specific_weapons">Non-Magic Weapons </a>
 </header>
@@ -38,14 +38,15 @@
 <main> 
         {% for weapon in weapons %}    
         <div class="list">
-                  
-                <h3> Weapon Name: {{ weapon.name }} </h3> 
+                <h2> Weapon Name: {{ weapon.name }} </h2> 
                 <p> Owner: {{weapon.owner.name}}</p>
-                <form action="/weapons/{{weapon.id}}/delete" method = "POST">
-                        <input type="submit" value = "❌">
-                </form>
-                <a href="/weapons/{{weapon.id}}/details"> Details </a>
-                <a href="/weapons/{{weapon.id}}/edit"> Edit </a>
+                <div class="mini_menu">
+                        <form action="/weapons/{{weapon.id}}/delete" method = "POST">
+                                <input type="submit" value = "❌" class="buttons">
+                        </form>
+                        <a href="/weapons/{{weapon.id}}/edit" class="buttons"> Edit </a>
+                        <a href="/weapons/{{weapon.id}}/details" class = "buttons"> Details </a>
+                </div>
         </div>
         {% endfor %}
 </main>

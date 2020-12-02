@@ -8,11 +8,11 @@
 <main>
     {% for guest in guests if guest %}
     <div class="list">
-    <h3>Name: {{guest.name}}</h3>
-    <p>Race: {{guest.race}}</p>
-    <a href="/guests/{{guest.id}}/weapons">Guest's Stored Weapons</a>
-    {% else %}
-    <h3 class="list" > Currently Empty </h3>
+        <h3>Name: {{guest.name}}</h3>
+        <p>Race: {{guest.race}}</p>
+        <a href="/guests/{{guest.id}}/weapons" class="buttons">Guest's Stored Weapons</a>
+        {% else %}
+        <h3 class="list" > Currently Empty </h3>
     </div>
     {% endfor %}
 </main>

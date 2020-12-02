@@ -8,7 +8,13 @@
     <p>Class: {{guest.type}}</p>
     <p>Race: {{guest.race}}</p>
     <p> Room: {{guest.room.name}}</p>
-    <a href="/guests/{{guest.id}}/weapons">Stored Weapons</a>
+    <div class="mini_menu">
+        <a href="/guests/{{guest.id}}/weapons" class="buttons">Stored Weapons</a>
+        <form action="/guests/{{guest.id}}/delete" method = POST>
+            <input type="submit" value="❌" class="buttons">
+        </form>
+        <a href="/guests/{{guest.id}}/edit" class="buttons"> Edit </a>
+    </div>
 </main>
 
 

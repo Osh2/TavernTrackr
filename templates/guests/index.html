@@ -27,11 +27,13 @@
     <div class="list">
     <h2> Name: {{guest.name}} </h2>
     <p> Room: {{guest.room.name}} </p>
-    <form action="/guests/{{guest.id}}/delete" method = POST>
-        <input type="submit" value="❌">
-    </form>
-    <a href="/guests/{{guest.id}}/edit"> Edit </a>
-    <a href="/guests/{{guest.id}}/details"> Details </a>
+    <div class="mini_menu">
+        <form action="/guests/{{guest.id}}/delete" method = POST>
+            <input type="submit" value="❌" class="buttons">
+        </form>
+        <a href="/guests/{{guest.id}}/edit" class="buttons"> Edit </a>
+        <a href="/guests/{{guest.id}}/details"class="buttons"> Details </a>
+    </div>
     </div>
     {% endfor %}
 </main>

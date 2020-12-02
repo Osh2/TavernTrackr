@@ -2,14 +2,20 @@
 {% block content %}
  
 <header class="add_form">
-    <h2>Weapon Details</h2>
+    <h1>Weapon Details</h1>
 </header>
 <main class="list">
-    <h3> Weapon Name: {{weapon.name}} </h3>
-    <h4>Owner: {{weapon.owner.name}}</h4>
+    <h2> Weapon Name: {{weapon.name}} </h2>
+    <h3>Owner: {{weapon.owner.name}}</h3>
     <p> Damage: {{weapon.damage}} </p>
     <p>Type: {{weapon.type}} </p>
     <p> Magic? {{weapon.magic}} </p>
     <p>Value: {{weapon.value}}gp </p>
+    <div class="mini_menu">
+        <form action="/weapons/{{weapon.id}}/delete" method = "POST">
+                <input type="submit" value = "❌" class="buttons">
+        </form>
+        <a href="/weapons/{{weapon.id}}/edit" class="buttons"> Edit </a>
+</div>
 </main>
 {% endblock %}
