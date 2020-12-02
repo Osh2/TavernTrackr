@@ -58,4 +58,7 @@ def show_magic_weapons():
     weapons = weapon_repository.read_weapons_by_magic(True)
     return render_template("weapons/magic_weapons.html", weapons = weapons)
 
-@weapons_blueprint.route("")
+@weapons_blueprint.route("/weapons/not_magic")
+def show_none_magic_weapons():
+    weapons = weapon_repository.read_weapons_by_magic(False)
+    return render_template("/weapons/magic_weapons.html", weapons = weapons)
