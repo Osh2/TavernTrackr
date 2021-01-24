@@ -5,3 +5,5 @@ This is the first program I've ever worked on. Created in the process of complet
 Designed from the hotel/admin perspective. Created using Python, FLask, SQL, HTML & CSS.
 
 Built in 6 days. 
+
+Once pulled - ```flask run```
